@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<news>
+	<topic>
+		<name>New Website</name>
+		<description>Welcome to my new website. I added a web design section and some new artwork. Please tour around my site.</description>
+		<date>Nov 12, 2008</date>
+	</topic>
+	<topic>
+		<name>Bandwagon Films website</name>
+		<description>I completed the Bandwagon Films website. Check it out at www.bandwagonfilms.com</description>
+		<date>Nov 5, 2008</date>
+	</topic>
+	<topic>
+		<name>Cowboy Smoke</name>
+		<description>Cowboy Smoke is a film produced by Bandwagon Films. I helped to promote the movie during the Austin film festival.</description>
+		<date>oct 30, 2008</date>
+	</topic>
+	<topic>
+		<name>Bandwagon Films website</name>
+		<description>I have stated working on the Bandwagon Films website. Bandwagon Films is a production company badsed in Austin Texas.</description>
+		<date>oct 10, 2008</date>
+	</topic>
+	<topic>
+		<name>New artwork</name>
+		<description>Check out gallery</description>
+		<date>Sep 18, 2008</date>
+	</topic>
+	<topic>
+		<name>New artwork</name>
+		<description>Check out gallery</description>
+		<date>Sep 6, 2008</date>
+	</topic>
+	<topic>
+		<name>New artwork</name>
+		<description>Check out gallery</description>
+		<date>Aug 25, 2008</date>
+	</topic>
+</news>

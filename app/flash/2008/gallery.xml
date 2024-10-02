@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gallery>
+	<item>
+		<name>Blooming Mountain</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/bloomingMountain_t.jpg</thumb>
+		<med>images/bloomingMountain_l.jpg</med>
+	</item>
+	<item>
+		<name>Town</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/town_t.jpg</thumb>
+		<med>images/town_l.jpg</med>
+	</item>
+	<item>
+		<name>Cube Valley</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/cubeValley_t.jpg</thumb>
+		<med>images/cubeValley_l.jpg</med>
+	</item>
+	<item>
+		<name>Halpern</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/halpern_t.jpg</thumb>
+		<med>images/halpern_l.jpg</med>
+	</item>
+	<item>
+		<name>Fuzz</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/fuzzMonster_t.jpg</thumb>
+		<med>images/fuzzMonster_l.jpg</med>
+	</item>
+	<item>
+		<name>Snail</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/snail_t.jpg</thumb>
+		<med>images/snail_l.jpg</med>
+	</item>
+	<item>
+		<name>Living Room</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/sitcomSet_t.jpg</thumb>
+		<med>images/sitcomSet_l.jpg</med>
+	</item>
+	<item>
+		<name>Tower</name>
+		<description>I place I somtimes wish I could visit</description>
+		<thumb>images/tower_t.jpg</thumb>
+		<med>images/tower_l.jpg</med>
+	</item>
+</gallery>

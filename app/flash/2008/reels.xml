@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<reel>
+	<item>
+		<name>2007 Rigging Reel</name>
+		<mov>rigReel2007.mov</mov>
+	</item>
+	<item>
+		<name>2006 Rigging Reel</name>
+		<mov>rigReel2006.mov</mov>
+	</item>
+</reel>

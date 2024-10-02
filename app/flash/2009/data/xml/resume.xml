@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resume>
+	<proficiencies>
+		<item>Actionscript</item>
+		<item>Adobe Photoshop</item>
+		<item>Adobe Dreamweaver</item>
+		<item>Adobe After Effects</item>
+		<item>Adobe Premiere</item>
+		<item>Adobe Illustrator</item>
+		<item>XML</item>
+		<item>PHP</item>
+		<item>Maya</item>
+		<item>Cinema 4D</item>
+	</proficiencies>
+	
+	<skills>
+		<item>Web Design</item>
+		<item>Program Development</item>
+		<item>Web Applications</item>
+		<item>Graphic Design</item>
+		<item>Print Design</item>
+		<item>Matte Painting</item>
+		<item>Vector Art</item>
+		<item>3D Art</item>
+	</skills>
+</resume>

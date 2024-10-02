@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediaGroup>
+<amgVersion version="1.3" />
+<groupInfo>
+<author></author>
+<authorApplication>Adobe Lightroom 1.0</authorApplication>
+<creationDate>02/05/10, 12:10:35 AM</creationDate>
+<galleryMaker name="Adobe Flash Gallery" version="1.3" />
+<groupData groupID="" groupName="" />
+<authorID></authorID>
+<custom>
+<groupTitle>My Photographs</groupTitle>
+<groupDescription>Web Photo Gallery created by Adobe Lightroom.</groupDescription>
+<siteTitle>One</siteTitle>
+<contactName>Contact Name</contactName>
+<contactEmail>mailto:user@domain</contactEmail>
+</custom>
+</groupInfo>
+<sizes>
+<imageSize size="thumb" maxwidth="48" maxheight="48" />
+<imageSize size="small" maxwidth="800" maxheight="450" />
+<imageSize size="medium" maxwidth="1040" maxheight="520" />
+<imageSize size="large" maxwidth="1150" maxheight="650" />
+</sizes>
+<media totalGallerySize="8">
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/AxiosBack.jpg" height="601" width="1049" />
+<rendition size="medium" src="bin/images/medium/AxiosBack.jpg" height="520" width="908" />
+<rendition size="small" src="bin/images/small/AxiosBack.jpg" height="450" width="785" />
+<rendition size="thumb" src="bin/images/thumb/AxiosBack.jpg" height="28" width="48" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/AxiosFront.jpg" height="601" width="1049" />
+<rendition size="medium" src="bin/images/medium/AxiosFront.jpg" height="520" width="908" />
+<rendition size="small" src="bin/images/small/AxiosFront.jpg" height="450" width="785" />
+<rendition size="thumb" src="bin/images/thumb/AxiosFront.jpg" height="28" width="48" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/QualiaFront.jpg" height="602" width="1051" />
+<rendition size="medium" src="bin/images/medium/QualiaFront.jpg" height="520" width="908" />
+<rendition size="small" src="bin/images/small/QualiaFront.jpg" height="450" width="786" />
+<rendition size="thumb" src="bin/images/thumb/QualiaFront.jpg" height="27" width="48" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/FuzzMonster.jpg" height="650" width="463" />
+<rendition size="medium" src="bin/images/medium/FuzzMonster.jpg" height="520" width="370" />
+<rendition size="small" src="bin/images/small/FuzzMonster.jpg" height="450" width="320" />
+<rendition size="thumb" src="bin/images/thumb/FuzzMonster.jpg" height="48" width="34" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/town.jpg" height="641" width="1139" />
+<rendition size="medium" src="bin/images/medium/town.jpg" height="520" width="924" />
+<rendition size="small" src="bin/images/small/town.jpg" height="450" width="800" />
+<rendition size="thumb" src="bin/images/thumb/town.jpg" height="27" width="48" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/flowerMountain.jpg" height="650" width="1040" />
+<rendition size="medium" src="bin/images/medium/flowerMountain.jpg" height="520" width="832" />
+<rendition size="small" src="bin/images/small/flowerMountain.jpg" height="450" width="720" />
+<rendition size="thumb" src="bin/images/thumb/flowerMountain.jpg" height="30" width="48" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/CubeValley.jpg" height="548" width="1150" />
+<rendition size="medium" src="bin/images/medium/CubeValley.jpg" height="496" width="1040" />
+<rendition size="small" src="bin/images/small/CubeValley.jpg" height="381" width="800" />
+<rendition size="thumb" src="bin/images/thumb/CubeValley.jpg" height="23" width="48" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description></description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/snail.jpg" height="641" width="1150" />
+<rendition size="medium" src="bin/images/medium/snail.jpg" height="520" width="932" />
+<rendition size="small" src="bin/images/small/snail.jpg" height="446" width="800" />
+<rendition size="thumb" src="bin/images/thumb/snail.jpg" height="27" width="48" />
+</renditions>
+</item>
+</media>
+</mediaGroup>

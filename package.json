@@ -1,0 +1,16 @@
+{
+  "name": "benjaminrubin.com",
+  "version": "1.0.0",
+  "description": "My site",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch-path=./app build.js",
+    "build": "NODE_ENV=production node build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@thewebformula/lithe": "file:../../thewebformula/lithe"
+  }
+}

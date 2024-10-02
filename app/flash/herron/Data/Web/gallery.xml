@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpleviewerGallery maxImageWidth="480" maxImageHeight="480" textColor="0xFFFFFF" frameColor="0xFFFFFF" frameWidth="20" stagePadding="40" thumbnailColumns="3" thumbnailRows="3" navPosition="left" title="" enableRightClickOpen="true" backgroundImagePath="" imagePath="images/" thumbPath="thumb/">
+<image>
+<filename>benRubin.jpg</filename>
+<caption></caption>
+</image>
+<image>
+<filename>mike.jpg</filename>
+<caption></caption>
+</image>
+<image>
+<filename>tmGundy.jpg</filename>
+<caption></caption>
+</image>
+<image>
+<filename>axios.jpg</filename>
+<caption></caption>
+</image>
+<image>
+<filename>bsi.jpg</filename>
+<caption></caption>
+</image>
+</simpleviewerGallery>

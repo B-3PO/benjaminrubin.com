@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<icons>
+
+<icon image="images/thumbs/flowerMountain_t.jpg" toolTip="Flower Mountain" main="images/medium/flowerMountain_m.jpg" large="images/large/flowerMountain.jpg"/>
+
+<icon image="images/thumbs/town_t.jpg" toolTip="Town" main="images/medium/town_m.jpg" large="images/large/town.jpg"/>
+
+<icon image="images/thumbs/axiosCardFront_t.jpg" toolTip="Axios Card" main="images/medium/axiosCardFront_m.jpg" large="images/large/axiosCardFront.jpg"/>
+<icon image="images/thumbs/halpern_t.jpg" toolTip="Halpern Logo" main="images/medium/halpern_m.jpg" large="images/large/halpern.jpg"/>
+<icon image="images/thumbs/mgvalley_t.jpg" toolTip="Cube Valley" main="images/medium/mgvalley_m.jpg" large="images/large/mgvalley.jpg"/>
+<icon image="images/thumbs/snail_t.jpg" toolTip="Snail" main="images/medium/snail_m.jpg" large="images/large/snail.jpg"/>
+<icon image="images/thumbs/abstract_t.jpg" toolTip="Abstract" main="images/medium/abstract_m.jpg" large="images/large/abstract.jpg" />
+<icon image="images/thumbs/FuzzMonster_t.jpg" toolTip="Fuzz Monster" main="images/medium/FuzzMonster_m.jpg" large="images/large/FuzzMonster.jpg"/>
+<icon image="images/thumbs/office_t.jpg" toolTip="Office" main="images/medium/office_m.jpg" large="images/large/office.jpg" />
+<icon image="images/thumbs/building_t.jpg" toolTip="Building" main="images/medium/building_m.jpg" large="images/large/building.jpg"/></icons>

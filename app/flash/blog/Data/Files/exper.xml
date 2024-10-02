@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+<item name="Sierpinski Triangle" date="7 - 16 - 10" swf="SWFS/Sierpinski.swf" pic="Thumbs/Sierpinski.png" zip="Zips/Sierpinski.zip">
+	<intro text="Fractals are fascinating. The Sierpinski triangle is a self-similarity tiling arrangement, that is reproducible at any magnification or reduction." />
+	<page>
+		<text><![CDATA[One of the more fascinating things about the <font color="#0080C0"><a href="http://en.wikipedia.org/wiki/Sierpinski_triangle">Sierpinski triangle</a></font> is it can be found in <font color="#0080C0"><a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game Of Life</a></font>. Click on the image below to see the fractal and control its levels.]]></text>
+		<image swf="true" footer="Sierpinski.swf" link="SWFS/Sierpinski.swf" height="120">Thumbs/Sierpinski.png</image>
+		<text><![CDATA[The first step in creating the Sierpinski triangle is to run an <font color="#0080C0"><a href="http://en.wikipedia.org/wiki/Iterated_function_system">iterated function system(ifs)</a></font>. In this function I create a triangle and for each of its sides I run the function again until the count has reached a set limit. Check out the code below.]]></text>
+		<code><![CDATA[maxSteps = 7;
+iterateSet(0, 500, 500, 0);
+
+private function iterateSet(centerX:Number, centerY:Number, length:Number, count:int):void {
+	var _x:Number = centerX;
+	var _y:Number = centerY;
+	var _length:Number = length;
+	var _count:int = count + 1;
+	
+	if(count < maxSteps){
+		createTriangle(_x, _y, _length);
+		
+		_length /= 2;
+		iterateSet(_x, _y, _length, _count);
+		_x += _length;
+		iterateSet(_x, _y, _length, _count);
+		_x -= (_length / 2);
+		_y -= _length;
+		iterateSet(_x, _y, _length, _count);
+	}
+}
+
+private function createTriangle(x:Number, y:Number, length:Number):void {
+	var _x:Number = x;
+	var _y:Number = y;
+	
+	points.push(new Point(_x, _y));
+	_x += length;
+	points.push(new Point(_x, _y));
+	_x -= length / 2;
+	_y -= length;
+	points.push(new Point(_x, _y));
+	points.push(new Point(x, y));
+}]]></code>
+	<text><![CDATA[Next I set up two Vectors that will be used to draw a path, one for the points of the triangles and one for the commands that tell the draw function how to handle the points. In the commands, a “1” means MoveTo and “2” means LineTo. Check the function below.]]></text>
+		<code><![CDATA[private function setPath():void {
+	var i:int;
+	var j:int;
+	var l:int;
+	
+	l = points.length;
+	for (i = 0; i < l; ++i) {
+		var point:Point = Point(points[i]);
+		path.push(Number(point.x), Number(point.y));
+	}
+	
+	l = path.length / 4;
+	for (i = 0; i < l; ++i) {
+		commands.push(1, 2, 2, 2);
+	}
+}]]></code>
+	<text><![CDATA[And Finally the draw function.]]></text>
+		<code><![CDATA[private function draw():void {
+	this.graphics.clear();
+	this.graphics.lineStyle(1, 0xFFFFFF, 1);
+	this.graphics.drawPath(commands, path);
+}]]></code>
+	</page>
+</item>
+
+<item name="Planet Displacement" date="7 - 13 - 10" swf="SWFS/DisplacementPlanet.swf" pic="Thumbs/Displacement.png" zip="Zips/Displacement Planet.zip">
+	<intro text="Now it is time to put the last two pieces together. I also am adding displacement to this example." />
+	<page>
+		<text><![CDATA[Click on the image below a couple of times to see different palnets genreateed.]]></text>
+		<image swf="true" footer="DisplacementPlanet.swf" link="SWFS/DisplacementPlanet.swf" height="120">Thumbs/Displacement.png</image>
+		<text><![CDATA[The two new additions to this code are the displacement BitmapData and the code to modify the vertices based on that BitmapData. The displacement Bitmapdata is already existing we just need to make it available to the vertices creation process. The perlin noise BitmapData is the displacement. The additional code needed to displace the geometry is similar to the process used to determain what color to use for the terrain. I just apply that number in a different manner. I simply multiply that value by the X, Y, and Z properties for each vertex. Check out the code below.]]></text>
+		<code><![CDATA[var vc:Vector3D;
+
+var pval:int = displacement.getPixel(displacement.width * _u, displacement.height * _v);
+var offset:Number = pval >> 16 & 0xFF;
+var h:Number = offset * offset * offset;
+h /= 65536;
+if (h < 3) h = 1;
+else h = 1 + (h * .008);
+
+if(q == 0 || q == numVerts - 1) {
+	vc = new Vector3D(Math.cos(iy) * Math.cos(ix), Math.sin(iy), Math.cos(iy) * Math.sin(ix));
+} else {
+	vc = new Vector3D((Math.cos(iy) * Math.cos(ix)) * h, (Math.sin(iy)) * h,
+										(Math.cos(iy) * Math.sin(ix)) * h);
+}]]></code>
+	<text><![CDATA[The only other difference is using the “Terrain” BitmapData to render the sphere.]]></text>
+	</page>
+</item>
+
+<item name="Procedural Terrain" date="7 - 12 - 10" swf="SWFS/Terrain.swf" pic="Thumbs/Terrain.jpg" zip="Zips/Terrain.zip">
+	<intro text="The next step in creating a planted is the terrain's texture. I am using Perlin noise with randomly generated colors and propeties." />
+	<page>
+		<text><![CDATA[This is were most of the randomness comes into play. The colors are randomly generated along with the properties for perlin noise(seed, octaves). Every lime you click on the image below a new terrain will be generated, so click on it at least twice.]]></text>
+		<image swf="true" footer="Terrain.swf" link="SWFS/Terrain.swf" height="120">Thumbs/Terrain.jpg</image>
+		<text><![CDATA[The first task in generating the terrain is to generate the colors. I start by creating an array of 5 randomly generated numbers. Next I create an array for the color ranges and alphas. Then I draw a gradient strip from that data to a BitmapData that is 256px wide. Once the BitmapData is created i can then loop through its 256 pixels and create an array of those colors. Check out the code below.]]></text>
+		<code><![CDATA[var i:int;
+var cl:int = 5; // Number of Colors
+
+var colors:Array = new Array();
+for (i = 0; i < cl; ++i) {
+	var newColor:int = Math.random() * 0xFFFFFF;
+	colors.push(newColor);
+}
+
+var alphas:Array = new Array();
+var ranges:Array = new Array();
+var step:int = (250 / cl);
+for (i = 0; i < cl; ++i) {
+	var newRange:int = (Math.random() * (step >> 1)) + (step >> 1);
+	newRange += step * i;
+	ranges.push(newRange);
+	
+	alphas.push(1);
+}
+
+var colorStrip:Shape = new Shape();
+
+var grad:Matrix = new Matrix();
+grad.createGradientBox(255, 1, 0, 0, 0);
+colorStrip.graphics.beginGradientFill(GradientType.LINEAR, colors, alphas,
+											ranges, grad, SpreadMethod.PAD);
+
+colorStrip.graphics.drawRect(0, 0, 256, 40);
+colorStrip.graphics.endFill();
+
+var colorArray:Array = new Array();
+var bmdColor:BitmapData = new BitmapData(256, 40, false, 0);
+bmdColor.draw(colorStrip);
+for (i = 0; i != 256; i++) {
+	var color:uint = bmdColor.getPixel(i, 1);
+	colorArray.push(color);
+}]]></code>
+	<text><![CDATA[To break down the process further I will explain the final loops math step by step. First I grab the current pixels color from the generated perlin noise BitmapData. Then I find its value from 0 - 256 “offset”. Next I cube that number. The pupose of this is to make the number have a much bigger range. Then I divide that number by 65536 which is 256 x 256. Now if that number is grate then 3 I set the current pixel on the “Terrain” BitmapData from the color array based on the “offset”. If the number is less than 3 It draw a pixel using a predetermined water color. By changing the cut off number you can control how much water is on the planet. Check out the code below.]]></text>
+	<code><![CDATA[var seed:Number = Math.floor(Math.random() * 100);
+var octaves:int = (Math.random() * 9) + 3;
+
+var _width:int = 256;
+var _height:int = 256;
+
+var source:BitmapData = new BitmapData(_width, _height, false)
+source.perlinNoise(_width, _height, octaves, seed, true, false, 7, true, null);
+	
+var pval:int;
+var j:int;
+var water:int = 0x0178B8;
+
+for (i = 0; i != _width; i++) {
+	for (j = 0; j != _height; j++) {
+		pval = source.getPixel(i, j);
+		var offset:Number = pval >> 16 & 0xFF;
+		var h:Number = offset * offset * offset;
+		h /= 65536;
+		
+		if (h < 3) terrain.setPixel(i, j, water);
+		else terrain.setPixel(i, j, colorArray[offset]);
+	}
+}]]></code>
+	</page>
+</item>
+
+<item name="Sphere" date="7 - 11 - 10" swf="SWFS/Sphere.swf" pic="Thumbs/sphere.png" zip="Zips/Sphere.zip">
+	<intro text="This is a look into 3D with an intention; I want to make procedural planets. The first step being a sphere." />
+	<page>
+		<text><![CDATA[My overall goal is to create procedurally generated planets with shading and clouds. To start i need a sphere to apply textures to. I have already gone over basic 3D so if you are not caught of with 3D in as3 then you should first read my post called “Basic 3D”. I will cover one method for z-sorting in this example which was not covered in my previous post. To see the sphere in action click on the image below.]]></text>
+		<image swf="true" footer="Sphere.swf" link="SWFS/Sphere.swf" height="120">Thumbs/sphere.png</image>
+		<text><![CDATA[Lets begin with the math behind a sphere, which is similar to a circle. There are many different ways to calculate a sphere, I will use a method that makes <font color="#0080C0"><a href="http://softimage.wiki.softimage.com/xsidocs/tex_basicproc_TypesofTextureProjection.htm#Rft19665">cubic uv projection mapping</a></font> very easy. To make this sphere I will make a Hampshire of vertices a set amount of time while incrementing the angle that the hemisphere is at. In this example I make a sphere that is 16x16 vertices. Below is the code for setting the vertices.]]></text>
+		<code><![CDATA[var PI:Number = Math.PI;
+var j:int;
+var i:int;
+var ix:Number = 0.0;
+var iy:Number = 0.0;
+var numVerts:int = 16;
+var radius:int = 10;
+
+for (i = 0; i != numVerts; i++) {
+	ix = i / (numVerts - 1) * PI * 2.0;
+	
+	for (j = 0; j != numVerts; j++) {
+		iy = (j / (numVerts - 1) - 0.5) * PI;
+		
+		var _u:Number = i / (numVerts - 1);
+		var _v:Number = j / (numVerts - 1);
+		uvtData.push( _u, _v, 0.0);
+		
+		var vc:Vector3D = new Vector3D(Math.cos(iy) * Math.cos(ix), Math.sin(iy),
+													Math.cos(iy) * Math.sin(ix));
+		
+		vertNormals.push(vc);
+		verts.push(radius * vc.x, radius * vc.y, radius * vc.z);
+		projected.push(0.0, 0.0);
+	}
+}]]></code>
+	<text><![CDATA[Next the indices need to be created. along with the indices I am preparing a array called “faces”, this is used in the z-sorting process. Below is the code for generating the indices.]]></text>
+	<code><![CDATA[var iiH:int = 0;
+for (q = 0 ; q != numVerts - 1; q++) {
+	for (j = 0 ; j != numVerts - 1; j++) {
+		indices.push(iiH, iiH+numVerts+1, iiH+1, iiH+numVerts, iiH+numVerts+1, iiH++);
+		faces.push(new Vector3D());
+		faces.push(new Vector3D());
+	}
+	iiH++;
+}]]></code>
+	<text><![CDATA[Now for the z-sorting. The method i am using is based on the uv coordinates. When the uv coordinates are projects a new property gets added to them “w”. This is the third dimension. This makes for an easy z-sorting process. All that needs to be done is a reordering of the indices. This is where the array “faces” comes in handy. I loop though the “faces” array and for each face in it I calculate the w property based on the three corresponding uvw coordinates by averaging them. After the loop is complete I then sort the array based on the w property. The last step is put the new order into a Vector containing integers. Check out the code below.]]></text>
+	<code><![CDATA[var face:Vector3D;
+var inc:int = 0;
+var i:int;
+var l:int = int(indices.length / 3);
+for (i = 0; i != l; i++){
+	face = faces[i] as Vector3D;
+	inc = int(i * 3);
+	face.x = indices[inc] as int;
+	face.y = indices[int(inc + 1)] as int;
+	face.z = indices[int(inc + 2)] as int;
+	
+	face.w = uvtData[int(face.x * 3 + 2)] as Number;
+	face.w += uvtData[int(face.y * 3 + 2)] as Number;
+	face.w += uvtData[int(face.z * 3 + 2)] as Number;
+	face.w *= 0.333333;
+	inc++;
+}
+faces.sortOn("w", Array.NUMERIC);
+
+inc = 0;
+for each (face in faces){
+	sortedIndices[inc++] = face.x;
+	sortedIndices[inc++] = face.y;
+	sortedIndices[inc++] = face.z;
+}]]></code>
+	<text><![CDATA[The last step is to render the sphere. The only difference in this example from the previous 3D example is that I am using the sorted indices instead of the originally generated ones.]]></text>
+	</page>
+</item>
+
+<item name="Circle Collision" date="7 - 08 - 10" swf="SWFS/CircleCollision.swf" pic="Thumbs/circleCollision.png" zip="Zips/Circle Collision.zip">
+	<intro text="Collision detection is the backbone of the majority of games and without it games like Tetris would not work. In this example I touch on 2D circle to circle collision with stage boundaries." />
+	<page>
+		<text><![CDATA[The three easiest types of collision detection is circle to circle, circle to square, and square to square. This example touches on the first two. Click on the image below to play with the final result.]]></text>
+		<image swf="true" footer="CircleCollision.swf" link="SWFS/CircleCollision.swf" height="120">Thumbs/circleCollision.png</image>
+		<text><![CDATA[It is very important to get your order of operation correct or your collision detection probably wont work. The order goes like this<br /><ul><li>1. Calculate the new position</li><li>2. Check for collision</li><li>3. Adjust objects position</li></ul><br />Lest first take a look at how I am moving the object. "dragCircle" is the blue circle.]]></text>
+		<code><![CDATA[var dx:Number = dragCircle.x - mouseX;
+var dy:Number = dragCircle.y - mouseY;
+dragCircle.x -= dx / 2;
+dragCircle.y -= dy / 2;]]></code>
+		<text><![CDATA[In the code above the first thing i am doing is calculating the distance from the current mouse position to the current “dragCircle”  position in both the X and Y axis. Next I am subtracting the distance dived by two from the current “dragCircle”  position. The higher the dividing number the slower the “dragCircle” will move. Now lets look at the stage boundary collision. This is the same method as circle to square collision but reversed since I want to keep the circle in. “widthBound” is the stage width, “heightBound” is the stage height, “radius” is the radius of “dragCircle”.]]></text>
+		<code><![CDATA[if (dragCircle.x > widthBound - radius) dragCircle.x += (widthBound - radius) - dragCircle.x;
+if (dragCircle.x < radius) dragCircle.x -= dragCircle.x - radius;
+if (dragCircle.y > heightBound - radius) dragCircle.y += (heightBound - radius) - dragCircle.y;
+if (dragCircle.y < radius) dragCircle.y -= dragCircle.y - radius;]]></code>
+		<text><![CDATA[Bassically we are cheking each wall of the square(stage) and making sure that the “dragCircle” is not crossing it. If the “dragCircle” is crossing it then we calculate the amount it is overlapping and then move the “dragCircle” that amount backwards. Now lets look at circle to circle. “circles” is a Vector containing the 4 brown circles on stage.]]></text>
+		<code><![CDATA[var circle:Shape;
+for each(circle in circles) {
+	dx = circle.x - dragCircle.x;
+	dy = circle.y - dragCircle.y;
+	var distance:Number = Math.sqrt(dx * dx + dy * dy);
+	var _width:Number = (circle.width / 2) + radius;
+	var overlap:Number = _width - distance;
+	
+	if (distance < _width) {
+		var angle:Number = Math.atan2(dx, dy) * (180 / Math.PI);
+		angle = -angle - 90;
+		dragCircle.x += overlap * (Math.cos(2.0 * Math.PI * angle / 360.0));
+		dragCircle.y += overlap * (Math.sin(2.0 * Math.PI * angle / 360.0));
+	}
+}]]></code>
+		<text><![CDATA[The first thing I am doing in the code above is looping through the Vector counting the brown circles. In the loop the first thing I calculate is the distance between the current circle and “dragCircle” in the X and Y axis. Then using those I calculate the direct distance(“distance”). After that I add the two circles radius’s( “_width”). Then I check to see if the direct distance(“distance”) is less than the two radius's(“_width”). If that is true then I calculate the overlap and the angle of “dragCircle” relative to the current brown circle. Now it is time to move the “dragCircle” the overlap amount. This is the big difference from dealing with squares. The math you see me using to calculate the new X and Y positions moves the “dragCircle” in the direction of the given angle.]]></text>
+	</page>
+</item>
+
+<item name="Basic 3D" date="7 - 06 - 10" swf="SWFS/Cube.swf" pic="Thumbs/cube.png" zip="Zips/Cube.zip">
+	<intro text="3D is cool." />
+	<page>
+		<text><![CDATA[This is simple test to understand 3D in as3. It is pretty straight forward once you look at the guts of a 3D object like a cube. Before I go on click the image below to see the final result.]]></text>
+		<image swf="true" footer="Cube.swf" link="SWFS/Cube.swf" height="120">Thumbs/cube.png</image>
+		<text><![CDATA[I am not going to touch on a few things like Z-Sorting in this example, also the order of indices and vertices may not mach the example files because I wrote this separately.<br />There are three main parts to a 3D object; Vertices, Indices, and UV Coordinates.  Lets star with vertices.<br /><br />Vertices are points in 3D coordinate space (X, Y, Z). With a cube there are eight vertices, one for each corner. Here is a  list of vertices for a cube that is 10x10x10 and each axis is centered to 0.<br /><br /><ul><li>1. (-5, -5, 5)</li><li>2. (5, -5, 5)</li><li>3. (5, -5, -5)</li><li>4. (-5, -5, -5)</li><li>5. (-5, 5, 5)</li><li>6. (5, 5, 5)</li><li>7. (5, 5, -5)</li><li>8. (-5, 5, -5)</li></ul><br />Below is an image showing the vertices.]]></text>
+		<image swf="false" footer="Vertices" link="" height="120">Thumbs/vertices.png</image>
+		<text><![CDATA[Indices determine the triangles that make up the 3D image using the vertices. Each triangle consist of 3 vertices, with a cube there are twelve triangles. Below is a list of indices broken up per triangle.<br /><br /><ul><li>1. (1, 2, 5)</li><li>2. (2, 6, 5)</li><li>3. (2, 3, 6)</li><li>4. (3, 7, 6)</li><li>5. (3, 4, 7)</li><li>6. (4, 8, 7)</li><li>7. (4, 1, 8)</li><li>8. (1, 5, 8)</li><li>9. (4, 3, 1)</li><li>10. (3, 2, 1)</li><li>11. (8, 7, 5)</li><li>12. (7, 6, 5)</li></ul><br />UV Coordinates are basically X and Y coordinates with normalized numbers(0-1). There are UV coordinates for each vertex in an object.<br /><br />Now lets look at how all of this is applied in actionscript 3. For vertices you have a Vector containing numbers, for the indices you have a Vector containing integers, and for the UV coordinates you have a Vector containing numbers. Now in addition to those three there is also a Vector of numbers for the projected vertices. This is done because flash actually displays the 3D objects in 2D space so the vertices need to get converted to 2D. The fact that we are actually in 2D space also means we need a projection matrix. This matrix is how you control the objects position, rotation , and scale. Once everything is setup and ready to render, you use a new drawing function that was released with player 10 called <font color="#0080C0"><a href="http://help.adobe.com/en_US/AS3LCR/Flash_10.0/?flash/display/Graphics.html#drawTriangles()">DrawTriangles</a></font>. To be able to control your field of view you also need to create a <font color="#0080C0"><a href="http://help.adobe.com/en_US/AS3LCR/Flash_10.0/flash/geom/PerspectiveProjection.html">PerspectiveProjection</a></font>. Below is my draw function. “perspective” is the variable for <font color="#0080C0"><a href="http://help.adobe.com/en_US/AS3LCR/Flash_10.0/flash/geom/PerspectiveProjection.html">PerspectiveProjection</a></font>.]]></text>
+		<code><![CDATA[var projectionMatrix:Matrix3D;
+projectionMatrix = perspective.toMatrix3D();
+projectionMatrix.prependTranslation(0.0, 0.0, 55.0);
+rotAngle += 0.7;
+projectionMatrix.prependRotation(rotAngle, Vector3D.Y_AXIS);
+projectionMatrix.prependRotation(rotAngle - 0.4, Vector3D.X_AXIS);
+projectionMatrix.prependRotation(rotAngle - 0.6, Vector3D.Z_AXIS);
+Utils3D.projectVectors(projectionMatrix, vertices, projectedVerts, uvData);
+
+cube.graphics.clear();
+cube.graphics.beginFill(0x444444, 1);
+cube.graphics.lineStyle(1, 0xBBBBBB, 1);
+cube.graphics.drawTriangles(projectedVerts, indices, null, TriangleCulling.NONE);
+cube.graphics.endFill();]]></code>
+	</page>
+</item>
+
+<item name="Basic Line Math" date="7 - 03 - 10" swf="SWFS/Lines.swf" pic="Thumbs/line.jpg" zip="Zips/Basic Line Math.zip">
+	<intro text="Drawing lines using math is something I started doing in high school on my TI-83 doring math class. This is a very basic example of drawing wavy lines using the cosine function." />
+	<page>
+		<text><![CDATA[First lets take a look at the Example. Click on the image Below to open the SWF.]]></text>
+		<image swf="true" footer="Lines.swf" link="SWFS/Lines.swf" height="120">Thumbs/line.jpg</image>
+		<text><![CDATA[This example uses basic line math to draw pixels on a Bitmap. I loop though the line length which is 600 pixels in this example, then calculate the Y position for each pixel.<br /><br />There are four variables in this equation besides the X and Y positions. They are Amplitude("amp"), Amplitude factor("ampFactor"), Wave length("waveLength"), and Wave length factor("waveFactor"). The BitmapData is called "drawBMD". The equation works like this: Take the Cosine of the (_x position multiplied by the Wave length) and multiply that by the amplitude. In the example you will also see + 150, that is for offsetting the Y position so the line is centered. To make the line have a varying width and length I multiply the Amplitude and the Wave length by their factors every iteration of the loop. This is done every frame which allows you to see the changes real-time.]]></text>
+		<code><![CDATA[drawBMD.lock();
+drawBMD.fillRect(drawBMD.rect, 0x9cd4eb);
+
+// this grabs the current value from the Amplitude slider
+amp = ampSlider.currentValue; // Reset the Amplitude
+// this grabs the current value from the Wave length slider
+waveLength = waveLengthSlider.currentValue; // Reset the Wave length
+
+var _x:int;
+var _y:int = 150; // Halfway point on y axis
+// 600 is the width of the stage
+for (_x = 0; _x != 600; ++_x) {
+	var newY:int = (Math.cos(_x * waveLength) * amp) + 150; // 150 is the offset on y
+	drawBMD.setPixel(_x, newY, 0x000000);
+	
+	amp *= ampFactor;
+	waveLength *= waveFactor;
+}
+
+drawBMD.unlock();]]></code>
+	</page>
+</item>
+
+<item name="Particle Distortion" date="6 - 24 - 10" swf="SWFS/ParticalDistortion.swf" pic="Thumbs/name.jpg" zip="Zips/Partical Distortion.zip">
+	<intro text="My First post is based on one of the pieces of this website. Using a linked list and some basic math I created some simple effects for distoring my logo or any other image." />
+	<page>
+		<text><![CDATA[For my first post I thought it would be cool to breakdown my logo/name distortion effect. This is a fairly easy method that can be applied in a variety of ways. The most difficult concept to understand is the linked list.<br /><br />Lets start by looking at the final result. Click on the image below to open the SWF]]></text>
+		<image swf="true" footer="ParticalDistortion.swf" link="SWFS/ParticalDistortion.swf" height="120">Thumbs/name.jpg</image>
+		<text><![CDATA[The first step is to load an image in, and convert it to particles. This is not to complicated, basically you loop through the pixels of the BitmapData and create a particle for each pixel. Lets take a look at my particle class.]]></text>
+		<code><![CDATA[public class Particle
+{
+	public var color:uint;
+	public var x:Number;
+	public var y:Number;
+	public var orgX:Number;
+	public var orgY:Number;
+	public var itemRight:Particle;
+	public var itemBelow:Particle;
+	
+	public function Particle(_x:Number = 0.0, _y:Number = 0.0, _color:uint = 0):void {
+		// Set Positions
+		x = _x;
+		y = _y;
+		
+		// Store First Positions
+		orgX = _x;
+		orgY = _y;
+		
+		color = _color;
+	}
+}]]></code>
+		<text><![CDATA[Now lets take a look at how this class is used to recreate the image with particles. First I get the width and height of the BitmapData, in the example below "source" is the BitmapData. Next I create a Vector of the particle class. Then with the width and hight I setup two loops one nested in the other. In the first loop(this loop is for width) I create a new Vector to represent the pixels in that column. In the next loop(this loop of for height) I first grab the pixel color from "source", and then create a particle with that color.<br /><br />Now that all particles exist it is time to link them together in preparation for looping through them. I loop through one column at a time and for each particle I reference the particle to the right of it and the particle below it.]]></text>
+		<code><![CDATA[var w:int = source.width;
+var h:int = source.height;
+
+// Vector of particles representing each pixel in the BitmapData
+var particles:Vector.<Vector.<Particle>> =  new Vector.<Vector.<Particle>>(w, true);
+
+var i:int;
+var j:int;
+
+// Create Particles
+for (i = 0; i != w; ++i) {
+	particles[i] = new Vector.<Particle>(h ,true);
+	for (j = 0; j != h; ++j) {
+		// Get color From bitmapData
+		var _color:uint = source.getPixel32(i, j);
+		// Create particle
+		particles[i][j] = new Particle(i, j, _color);
+	}
+}
+
+// Linking the items together
+for (i = 0; i != w; ++i) {
+	for (j = 0; j != h; ++j) {
+		if (i != w-1) particles[i][j].itemRight = particles[i + 1][j];
+		if (j != h-1) particles[i][j].itemBelow = particles[i][j + 1];
+	}	
+}]]></code>
+		
+		<text><![CDATA[Everything is now ready to display. Below is the function that runs every frame, and tells the particles where to go. "drawBMD" is the BitmapData that the particles are drawn to. In this function I use two do while loops, one nested in the other. I am checking to see if the current particle I'm am looking at has reference to the particle to right of it and then if it has reference to the particle below it. If the reference's are their then I switch to the next particle. If there are no reference's then the loop stops.<br /><br />The best place for you to start messing with things is the math in the loops. This is the math that gives the particles their movements.]]></text>
+		
+		<code><![CDATA[public function modify(mx:Number, my:Number):void {
+	var itemX:Particle = firstItem;
+	var itemY:Particle = itemX;
+	var newX:Number;
+	var newY:Number;
+	var diffX:Number;
+	var diffY:Number;
+	var dx:Number;
+	var dy:Number;
+	var angle:Number;
+	var distance:Number;
+	var multiplier:Number;
+	var angleX:Number;
+	var angleY:Number;
+	var dx2:Number;
+	var dy2:Number;
+	
+	// Lock and Fill bitmapData
+	drawBMD.lock();
+	drawBMD.fillRect(drawBMD.rect, 0xFFFFFF);
+	
+	do {
+		do {
+			// Get X and Y distances
+			dx = mx - (itemY.x + dist);
+			dy = my - (itemY.y + dist);
+			
+			dx2 = dx * dx;
+			dy2 = dy * dy;
+			// Get Distance betwwen the mouse and the Particle
+			distance = Math.sqrt(dx2 + dy2);
+			
+			// If the particle is within the Effect Raduis
+			if (distance < dist) {
+				// Get the angle of the particle in relation to the mouse
+				angle = Math.atan2(mx - itemY.x, my - itemY.y);
+				// Get a 0 to 1 number based on the particles distance from the mouse
+				multiplier = (dist - distance) / dist;
+				
+				// Use the Multiplier to create individual distance numbers
+				// to effect the new Particle Postions
+				dx /= dist
+				dx *= 8;
+				dx *= multiplier;
+				
+				dy /= dist;
+				dy *= 8;
+				dy *= multiplier;
+				
+				// Split the angle into two diferencet angles and modify
+				// them to get some cool flow patterns
+				angleX = angle;
+				angleX *= dx * dx / multiplier;
+				
+				angleY = angle;
+				angleY *= dy * dy / multiplier;
+				
+				// Calculate the new Postions
+				newX = itemY.x;
+				newX -= Math.cos(angleX) * dx;
+				newY = itemY.y;
+				newY -= Math.sin(angleY) * dy;
+			}else {
+				// Calculate the positions for the Particle
+				// heading back to its original position.
+				newX = itemY.x;
+				diffX = itemY.x - itemY.orgX;
+				newX -= diffX / 10;
+				if (diffX < 1) newX = itemY.orgX;
+				
+				newY = itemY.y;
+				diffY = itemY.y - itemY.orgY;
+				newY -= diffY / 10;
+				if (diffY < 1) newY = itemY.orgY;
+			}
+			
+			// Apply the new X and Y Coordinates
+			itemY.x = newX;
+			itemY.y = newY;
+			
+			// Add the pixel to the BitmapData
+			drawBMD.setPixel32(newX + dist, newY + dist, itemY.color);
+		}while (itemY = itemY.itemBelow)
+	} while (itemY = itemX = itemX.itemRight)
+	
+	drawBMD.unlock();
+}]]></code>
+	</page>
+</item>
+</data>

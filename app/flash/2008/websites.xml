@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<websites>
+	<item>
+		<name>Mike Pugliese</name>
+		<pic>websites/images/mike_l.jpg</pic>
+		<thumb>websites/images/mike_t.jpg</thumb>
+		<links>www.mpphoto.ws</links>
+		<description>Mike Pugliese is a forward thinking photographer that that uses experimental techniques to create uniqe photography.</description> 
+	</item>
+	<item>
+		<name>Axios Studios</name>
+		<pic>websites/images/webCompany_l.jpg</pic>
+		<thumb>websites/images/webCompany_t.jpg</thumb>
+		<links>www.axiosstudios.com</links>
+		<description>Axios Studios is a company that deals with advertising. Specializing in web design, promotional events and photography Axios Studios will bring your products identity to a target audience with a refreshing look. Axios Sudios is also currently working on a film called "The Next Big Thing".</description> 
+	</item>
+	<item>
+		<name>Bandwagon Films</name>
+		<pic>websites/images/webBandwagon_l.jpg</pic>
+		<thumb>websites/images/webBandwagon_t.jpg</thumb>
+		<links>www.bandwagonfilms.com</links>
+		<description>Bandwagon Films is a motion picture company that was created in 2002 by filmmaker Will Moore. Since then Bandwagon Films has produced two feature films, Wesley Cash and Cowboy Smoke, as well as a number of short films. Their films have won critical acclaim, festival awards, and secured worldwide distribution.</description> 
+	</item>
+	<item>
+		<name>My old site</name>
+		<pic>websites/images/webOld_l.jpg</pic>
+		<thumb>websites/images/webOld_t.jpg</thumb>
+		<links>www.benjaminrubin.com/old</links>
+		<description>I created this website right after i graduated from Full Sail University. While this is not the most polished site, it does show good design concept and user interactivity. The gallery on my old site is outdated to see my latest work navigate to the gallery.</description> 
+	</item>
+	<item>
+		<name>Axios Studios old site</name>
+		<pic>websites/images/webCompanyOld_l.jpg</pic>
+		<thumb>websites/images/webCompanyOld_t.jpg</thumb>
+		<links>www.axiosadvertising.com/old</links>
+		<description>Axios Studios needed a temporary website while i worked on the current one. I came up with a simple concept of depth swapping for the pages. Axios Studios does not update thier old website to see thier most current news and work go to www.axiosstudios.com</description> 
+	</item>
+</websites>

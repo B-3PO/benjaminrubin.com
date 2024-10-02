@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<menu>
+	<button>
+		<name>News</name>
+		<description>Let you Primary visual cortex feast upon my tidings</description>
+	</button>
+	<button>
+		<name>Web Design</name>
+		<description>Designing the web for your pleasure</description>
+	</button>
+	<button>
+		<name>Gallery</name>
+		<description>Here you will have the oppertunity to glance upon my craft</description>
+	</button>
+	<button>
+		<name>Demo Reel</name>
+		<description>Engulf yourself into my 3D rigging reel</description>
+	</button>
+	<button>
+		<name>Resume</name>
+		<description>You dont know me</description>
+	</button>
+	<button>
+		<name>Contact</name>
+		<description>communicable</description>
+	</button>
+</menu>

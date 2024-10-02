@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediaGroup>
+<amgVersion version="1.3" />
+<groupInfo>
+<author></author>
+<authorApplication>Adobe Lightroom 1.0</authorApplication>
+<creationDate>02/03/10, 11:35:38 PM</creationDate>
+<galleryMaker name="Adobe Flash Gallery" version="1.3" />
+<groupData groupID="" groupName="" />
+<authorID></authorID>
+<custom>
+<groupTitle>My Photographs</groupTitle>
+<groupDescription>Web Photo Gallery created by Adobe Lightroom.</groupDescription>
+<siteTitle>Site Title</siteTitle>
+<contactName>Contact Name</contactName>
+<contactEmail>mailto:user@domain</contactEmail>
+</custom>
+</groupInfo>
+<sizes>
+<imageSize size="thumb" maxwidth="96" maxheight="96" />
+<imageSize size="small" maxwidth="300" maxheight="200" />
+<imageSize size="medium" maxwidth="450" maxheight="300" />
+<imageSize size="large" maxwidth="800" maxheight="450" />
+</sizes>
+<media totalGallerySize="9">
+<item>
+<title>http://www.benjaminrubin.com/lippisch</title>
+<description>Lippisch is a twist on the classic top down shooters like Galaga. Currently the demo is availible to play for anyone interested.  Hint: try to fly across the screen.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/lippisch.jpg" height="450" width="375" />
+<rendition size="medium" src="bin/images/medium/lippisch.jpg" height="300" width="250" />
+<rendition size="small" src="bin/images/small/lippisch.jpg" height="200" width="167" />
+<rendition size="thumb" src="bin/images/thumb/lippisch.jpg" height="96" width="80" />
+</renditions>
+</item>
+<item>
+<title>http://www.herroncreativeworks.com</title>
+<description>Herron Creative Works is a unique media agency Comprised of talented inividauls; deticated to creating quality work.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/Herron.jpg" height="450" width="600" />
+<rendition size="medium" src="bin/images/medium/Herron.jpg" height="300" width="400" />
+<rendition size="small" src="bin/images/small/Herron.jpg" height="200" width="267" />
+<rendition size="thumb" src="bin/images/thumb/Herron.jpg" height="72" width="96" />
+</renditions>
+</item>
+<item>
+<title>http://www.mpcine.com</title>
+<description>Michael provides a forward thinking approach to content creation from the perspective of unique lens', mediums & techniques; Tailor made solutions for commercial work, head shots, event coverage, advertising, and a whole lot more.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/Mike.jpg" height="450" width="595" />
+<rendition size="medium" src="bin/images/medium/Mike.jpg" height="300" width="397" />
+<rendition size="small" src="bin/images/small/Mike.jpg" height="200" width="264" />
+<rendition size="thumb" src="bin/images/thumb/Mike.jpg" height="73" width="96" />
+</renditions>
+</item>
+<item>
+<title>http://www.benjaminrubin.com/axios</title>
+<description>Axios Studios is a graphic design firm comprised of talented individuals. They identify the unique needs of their clients to creat work that exceeds expectation. At Axios Studios  each project is created with diverse and dynamic content to create truly original results.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/Axios.jpg" height="450" width="487" />
+<rendition size="medium" src="bin/images/medium/Axios.jpg" height="300" width="325" />
+<rendition size="small" src="bin/images/small/Axios.jpg" height="200" width="217" />
+<rendition size="thumb" src="bin/images/thumb/Axios.jpg" height="89" width="96" />
+</renditions>
+</item>
+<item>
+<title>http://www.benjaminrubin.com/tmGundy</title>
+<description>Tm Gundy is an urban clothing line, bringing a fresh new look to people.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/TmGundy.jpg" height="450" width="575" />
+<rendition size="medium" src="bin/images/medium/TmGundy.jpg" height="300" width="383" />
+<rendition size="small" src="bin/images/small/TmGundy.jpg" height="200" width="255" />
+<rendition size="thumb" src="bin/images/thumb/TmGundy.jpg" height="75" width="96" />
+</renditions>
+</item>
+<item>
+<title>http://www.benjaminrubin.com/figmenting</title>
+<description>Figmenting is an experimental website for sharing your dreams with people. Currently Figmenting is only in the beggining stages, and shall be released when  its finished.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/figmenting.jpg" height="450" width="600" />
+<rendition size="medium" src="bin/images/medium/figmenting.jpg" height="300" width="400" />
+<rendition size="small" src="bin/images/small/figmenting.jpg" height="200" width="267" />
+<rendition size="thumb" src="bin/images/thumb/figmenting.jpg" height="72" width="96" />
+</renditions>
+</item>
+<item>
+<title>http://www.bsihome.com</title>
+<description>BSI is a full service insurance brokerage company providing life and annuity products and support to independent insurance producers.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/BSI.jpg" height="450" width="534" />
+<rendition size="medium" src="bin/images/medium/BSI.jpg" height="300" width="356" />
+<rendition size="small" src="bin/images/small/BSI.jpg" height="200" width="238" />
+<rendition size="thumb" src="bin/images/thumb/BSI.jpg" height="81" width="96" />
+</renditions>
+</item>
+<item>
+<title>http://www.bandwagonfilms.com</title>
+<description>Bandwagon Films offers a wide range of services for the independent producer witha gaol of delivering high quality at a reasonable cost.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/bandwagon.jpg" height="450" width="559" />
+<rendition size="medium" src="bin/images/medium/bandwagon.jpg" height="300" width="372" />
+<rendition size="small" src="bin/images/small/bandwagon.jpg" height="200" width="248" />
+<rendition size="thumb" src="bin/images/thumb/bandwagon.jpg" height="77" width="96" />
+</renditions>
+</item>
+<item>
+<title></title>
+<description>Movie In pre-production. Cant talk about or link to the website.</description>
+<imageID dbtype="Adobe Lightroom 1.0" dbname="db1234" id="" />
+<mediaType category="image" format="jpeg" />
+<renditions>
+<rendition size="large" src="bin/images/large/TNBT.jpg" height="450" width="600" />
+<rendition size="medium" src="bin/images/medium/TNBT.jpg" height="300" width="400" />
+<rendition size="small" src="bin/images/small/TNBT.jpg" height="200" width="266" />
+<rendition size="thumb" src="bin/images/thumb/TNBT.jpg" height="72" width="96" />
+</renditions>
+</item>
+</media>
+</mediaGroup>

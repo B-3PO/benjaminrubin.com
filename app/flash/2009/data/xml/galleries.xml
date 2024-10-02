@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<galleries>
+	<images>
+		<logo name="Logo's">
+			<item>
+				<title>Axios Studios</title>
+				<large>data/images/axiosLogo_large.jpg</large>
+				<hiRes>data/images/axiosLogo_hiRes.jpg</hiRes>
+				<loRes>data/images/axiosLogo_lowRes.jpg</loRes>
+				<thumb>data/images/axiosLogo_thumb.jpg</thumb>
+				<comment>Unknown</comment>
+			</item>
+			
+			<item>
+				<title>Hot Studs</title>
+				<large>data/images/hotStuds1_large.jpg</large>
+				<hiRes>data/images/hotStuds1_hiRes.jpg</hiRes>
+				<loRes>data/images/hotStuds1_lowRes.jpg</loRes>
+				<thumb>data/images/hotStuds1_thumb.jpg</thumb>
+				<comment>Dont Ask</comment>
+			</item>
+		</logo>
+		
+		<vectorWorks name="Vector Works">
+			<item>
+				<title>Morning Fuzz</title>
+				<large>data/images/FuzzMonster_large.jpg</large>
+				<hiRes>data/images/FuzzMonster_hiRes.jpg</hiRes>
+				<loRes>data/images/FuzzMonster_lowRes.jpg</loRes>
+				<thumb>data/images/FuzzMonster_thumb.jpg</thumb>
+				<comment>Before Work</comment>
+			</item>
+		</vectorWorks>
+		
+		<threeD name="Three D">
+			<item>
+				<title>Cube Valley</title>
+				<large>data/images/cubeValley_large.jpg</large>
+				<hiRes>data/images/cubeValley_hiRes.jpg</hiRes>
+				<loRes>data/images/cubeValley_lowRes.jpg</loRes>
+				<thumb>data/images/cubeValley_thumb.jpg</thumb>
+				<comment>Too many cubes to count</comment>
+			</item>
+			
+			<item>
+				<title>TNBT Set</title>
+				<large>data/images/set_large.jpg</large>
+				<hiRes>data/images/set_hiRes.jpg</hiRes>
+				<loRes>data/images/set_lowRes.jpg</loRes>
+				<thumb>data/images/set_thumb.jpg</thumb>
+				<comment>Set Design</comment>
+			</item>
+			
+			<item>
+				<title>Tower Lone</title>
+				<large>data/images/towerLone_large.jpg</large>
+				<hiRes>data/images/towerLone_hiRes.jpg</hiRes>
+				<loRes>data/images/towerLone_lowRes.jpg</loRes>
+				<thumb>data/images/towerLone_thumb.jpg</thumb>
+				<comment>Where am I PRT2?</comment>
+			</item>
+			
+			<item>
+				<title>Snail Dale</title>
+				<large>data/images/snail_large.jpg</large>
+				<hiRes>data/images/snail_hiRes.jpg</hiRes>
+				<loRes>data/images/snail_lowRes.jpg</loRes>
+				<thumb>data/images/snail_thumb.jpg</thumb>
+				<comment>What is Dale?</comment>
+			</item>
+		</threeD>
+		
+		<businesscards name="Business Cards">
+			<item>
+				<title>Axios Studios: Side A</title>
+				<large>data/images/axiosCard_large.jpg</large>
+				<hiRes>data/images/axiosCard_hiRes.jpg</hiRes>
+				<loRes>data/images/axiosCard_lowRes.jpg</loRes>
+				<thumb>data/images/axiosCard_thumb.jpg</thumb>
+				<comment>Joel Finklestien's Coffee House in Washington DC</comment>
+			</item>
+			
+			<item>
+				<title>Axios Studios: Side B</title>
+				<large>data/images/axiosCardBack_large.jpg</large>
+				<hiRes>data/images/axiosCardBack_hiRes.jpg</hiRes>
+				<loRes>data/images/axiosCardBack_lowRes.jpg</loRes>
+				<thumb>data/images/axiosCardBack_thumb.jpg</thumb>
+				<comment>Joel Finklestien's Coffee House in Washington DC</comment>
+			</item>
+			
+			<item>
+				<title>Qualia Coffee: Side A</title>
+				<large>data/images/QualiaFront_large.jpg</large>
+				<hiRes>data/images/QualiaFront_hiRes.jpg</hiRes>
+				<loRes>data/images/QualiaFront_lowRes.jpg</loRes>
+				<thumb>data/images/QualiaFront_thumb.jpg</thumb>
+				<comment>Joel Finklestien's Coffee House in Washington DC</comment>
+			</item>
+			
+			<item>
+				<title>Qualia Coffee: Side B</title>
+				<large>data/images/QualiaBack_large.jpg</large>
+				<hiRes>data/images/QualiaBack_hiRes.jpg</hiRes>
+				<loRes>data/images/QualiaBack_lowRes.jpg</loRes>
+				<thumb>data/images/QualiaBack_thumb.jpg</thumb>
+				<comment>Joel Finklestien's Coffee House in Washington DC</comment>
+			</item>
+			
+			<item>
+				<title>Nathan Bayless: Side A</title>
+				<large>data/images/nathanBack_large.jpg</large>
+				<hiRes>data/images/nathanBack_hiRes.jpg</hiRes>
+				<loRes>data/images/nathanBack_lowRes.jpg</loRes>
+				<thumb>data/images/nathanBack_thumb.jpg</thumb>
+				<comment>Axios Studios Writer/Director</comment>
+			</item>
+			
+			<item>
+				<title>Nathan Bayless: Side B</title>
+				<large>data/images/nathanFront_large.jpg</large>
+				<hiRes>data/images/nathanFront_hiRes.jpg</hiRes>
+				<loRes>data/images/nathanFront_lowRes.jpg</loRes>
+				<thumb>data/images/nathanFront_thumb.jpg</thumb>
+				<comment>Axios Studios Writer/Director</comment>
+			</item>
+		</businesscards>
+		
+		<mattePainting name="Matte Paintings">
+			<item>
+				<title>Flower Mountain</title>
+				<large>data/images/flowerMountain_large.jpg</large>
+				<hiRes>data/images/flowerMountain_hiRes.jpg</hiRes>
+				<loRes>data/images/flowerMountain_lowRes.jpg</loRes>
+				<thumb>data/images/flowerMountain_thumb.jpg</thumb>
+				<comment>Furry Fruit</comment>
+			</item>
+			
+			<item>
+				<title>2Town</title>
+				<large>data/images/2Town_large.jpg</large>
+				<hiRes>data/images/2Town_hiRes.jpg</hiRes>
+				<loRes>data/images/2Town_lowRes.jpg</loRes>
+				<thumb>data/images/2Town_thumb.jpg</thumb>
+				<comment>Where am I?</comment>
+			</item>
+		</mattePainting>
+	</images>
+	
+	<webDesign>
+		<professional name="Professional">
+			<item>
+				<title>Brokerage Solutions Inc.</title>
+				<large>data/websites/bsi_large.jpg</large>
+				<hiRes>data/websites/bsi_hiRes.jpg</hiRes>
+				<loRes>data/websites/bsi_lowRes.jpg</loRes>
+				<thumb>data/websites/bsi_thumb.jpg</thumb>
+				<link>http://www.bsihome.com</link>
+				<comment>Life insurance</comment>
+			</item>
+			
+			<item>
+				<title>Michael Pugliese: Photagrapher</title>
+				<large>data/websites/mike_large.jpg</large>
+				<hiRes>data/websites/mike_hiRes.jpg</hiRes>
+				<loRes>data/websites/mike_lowRes.jpg</loRes>
+				<thumb>data/websites/mike_thumb.jpg</thumb>
+				<link>http://www.mpphoto.ws</link>
+				<comment>Photography that strikes emotion</comment>
+			</item>
+			
+			<item>
+				<title>Axios Studios llc.</title>
+				<large>data/websites/axios_large.jpg</large>
+				<hiRes>data/websites/axios_hiRes.jpg</hiRes>
+				<loRes>data/websites/axios_lowRes.jpg</loRes>
+				<thumb>data/websites/axios_thumb.jpg</thumb>
+				<link>http://www.axiosstudios.com</link>
+				<comment>Bringing advertising to a beautiful level</comment>
+			</item>
+			
+			<item>
+				<title>TMGundy</title>
+				<large>data/websites/TMGundy_large.jpg</large>
+				<hiRes>data/websites/TMGundy_hiRes.jpg</hiRes>
+				<loRes>data/websites/TMGundy_lowRes.jpg</loRes>
+				<thumb>data/websites/TMGundy_thumb.jpg</thumb>
+				<link>http://www.TMGundy.com/site.html</link>
+				<comment></comment>
+			</item>
+			
+			<item>
+				<title>Bandwagon Films</title>
+				<large>data/websites/bandWagonFilms_large.jpg</large>
+				<hiRes>data/websites/bandWagonFilms_hiRes.jpg</hiRes>
+				<loRes>data/websites/bandWagonFilms_lowRes.jpg</loRes>
+				<thumb>data/websites/bandWagonFilms_thumb.jpg</thumb>
+				<link>http://www.bandwagonfilms.com</link>
+				<comment>Production company with films in the Austin Film Festival</comment>
+			</item>
+		</professional>
+		
+		<personal name="Personal">
+			<item>
+				<title>My 2007 Website</title>
+				<large>data/websites/2007_large.jpg</large>
+				<hiRes>data/websites/2007_hiRes.jpg</hiRes>
+				<loRes>data/websites/2007_lowRes.jpg</loRes>
+				<thumb>data/websites/2007_thumb.jpg</thumb>
+				<link>http://www.benjaminrubin.com/2007/</link>
+				<comment>Website may not have up to date information and work</comment>
+			</item>
+			
+			<item>
+				<title>My 2008 Website</title>
+				<large>data/websites/2008_large.jpg</large>
+				<hiRes>data/websites/2008_hiRes.jpg</hiRes>
+				<loRes>data/websites/2008_lowRes.jpg</loRes>
+				<thumb>data/websites/2008_thumb.jpg</thumb>
+				<link>http://www.benjaminrubin.com/2008/</link>
+				<comment>Website may not have up to date information and work</comment>
+			</item>
+		</personal>
+	</webDesign>
+	
+	<projects>
+		<item>
+			<title>Blue Paper Film</title>
+			<main>data/projects/bluePaper.jpg</main>
+			<images>
+				<item>
+					<thumb>data/projects/bluePaper_1_thumb.jpg</thumb>
+					<large>data/projects/bluePaper_1_large.jpg</large>
+				</item>
+				
+				<item>
+					<thumb>data/projects/bluePaper_2_thumb.jpg</thumb>
+					<large>data/projects/bluePaper_2_large.jpg</large>
+				</item>
+				
+				<item>
+					<thumb>data/projects/bluePaper_3_thumb.jpg</thumb>
+					<large>data/projects/bluePaper_3_large.jpg</large>
+				</item>
+				
+				<item>
+					<thumb>data/projects/bluePaper_4_thumb.jpg</thumb>
+					<large>data/projects/bluePaper_4_large.jpg</large>
+				</item>
+				
+				<item>
+					<thumb>data/projects/bluePaper_5_thumb.jpg</thumb>
+					<large>data/projects/bluePaper_5_large.jpg</large>
+				</item>
+			</images>
+			<link>www.bluepaperfilm.com</link>
+			<description>Currently I'm working with Nicole Elmer and Jorge Sermini from Blue Paper Film on a experimental website. We will attempt to bring an unfamiliar interactive experience to people, with the hope of stimulating ones thought of reality. You can find out more about their company by attending their current website.</description>
+		</item>
+		
+		<item>
+			<title>A.M.C.S. website</title>
+			<main>data/projects/amcs.jpg</main>
+			<images>
+				<item>
+					<thumb>data/projects/amcs_1_thumb.jpg</thumb>
+					<large>data/projects/amcs_1_large.jpg</large>
+				</item>
+				
+				<item>
+					<thumb>data/projects/amcs_2_thumb.jpg</thumb>
+					<large>data/projects/amcs_2_large.jpg</large>
+				</item>
+				
+				<item>
+					<thumb>data/projects/amcs_3_thumb.jpg</thumb>
+					<large>data/projects/amcs_3_large.jpg</large>
+				</item>
+			</images>
+			<link>http://www.benjaminrubin.com/amcs</link>
+			<description>A.M.C.S. stands for Association for Mexican Cave Studies. They are a non-profit orginazation dedicated to supporting the exploration, study, and conservation of the caves of Mexico, chiefly through a program of publications. The AMCS is an official Project of the National Speleological Society. The website is currently under construction. You can view the current state at the link below.</description>
+		</item>
+		
+		<item>
+			<title>Paypal Button Class</title>
+			<main>data/projects/ppCart.jpg</main>
+			<images>
+			</images>
+			<link></link>
+			<description>This is a very simple and easy to use AS3 class for Paypal. You can send items to a cart and view your cart. Also when the user returns to your website from the paypal cart this class returns a string that lets you know if they pressed the continue shopping button, the cancel button, or if the user completed the order.</description>
+		</item>
+	</projects>
+</galleries>
